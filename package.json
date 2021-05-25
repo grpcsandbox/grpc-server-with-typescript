@@ -1,0 +1,34 @@
+{
+  "name": "grpc-server-with-typescript",
+  "version": "1.0.0",
+  "description": "Basic gRPC server with TypeScript",
+  "main": "server.js",
+  "scripts": {
+    "proto:generate": "npx grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./proto --grpc_out=./proto --ts_out=./proto zoo.proto",
+    "proto:clear": "npx rimraf ./proto/*pb*",
+    "start": "ts-node-dev ./my.zoo.service.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grpcsandbox/grpc-server-with-typescript.git"
+  },
+  "keywords": [
+    "gRPC",
+    "typescript",
+    "server"
+  ],
+  "author": "Girma Nigusse",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grpcsandbox/grpc-server-with-typescript/issues"
+  },
+  "homepage": "https://github.com/grpcsandbox/grpc-server-with-typescript#readme",
+  "dependencies": {
+    "grpc": "^1.24.10",
+    "grpc_tools_node_protoc_ts": "^5.2.2",
+    "grpc-tools": "^1.11.1",
+    "rimraf": "^3.0.2",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.4"
+  }
+}

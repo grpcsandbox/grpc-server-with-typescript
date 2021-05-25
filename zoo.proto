@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package zoo;
+
+service Zoo {
+  rpc GetBirdByName(GetBirdByNameRequest) returns (GetBirdByNameResponse) {}
+  rpc GetBirdByWingspan(GetBirdByWingspanRequest) returns (GetBirdByWingspanResponse) {}
+  rpc GetBirds(GetBirdsRequest) returns (GetBirdsResponse) {}
+}
+
+message Bird {
+  string name = 1;
+  int32 wingspan = 2;
+}
+
+message GetBirdByNameRequest {
+  string commonName = 1;
+}
+
+message GetBirdByNameResponse {
+  Bird bird = 1;
+}
+
+message GetBirdByWingspanRequest {
+  int32 wingspan = 1;
+}
+
+message GetBirdByWingspanResponse {
+  Bird bird = 1;
+}
+
+message GetBirdsRequest {}
+
+message GetBirdsResponse {
+  repeated Bird birds = 1;
+}
