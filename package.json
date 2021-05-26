@@ -4,9 +4,9 @@
   "description": "Basic gRPC server with TypeScript",
   "main": "server.js",
   "scripts": {
-    "proto:generate": "npx grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./proto --grpc_out=./proto --ts_out=./proto zoo.proto",
+    "proto:generate": "npx grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./proto --grpc_out=./proto --ts_out=./proto src/zoo.proto",
     "proto:clear": "npx rimraf ./proto/*pb*",
-    "start": "ts-node-dev ./my.zoo.service.ts",
+    "start": "ts-node-dev src/my.zoo.service.ts",
     "lint": "eslint . --ext .ts",
     "pretty": "npx prettier --no-config './**/*.{ts,js,json}' --write"
   },

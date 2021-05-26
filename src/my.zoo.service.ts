@@ -1,5 +1,5 @@
 import grpc, { sendUnaryData, ServerUnaryCall } from "grpc";
-import { IZooServer, ZooService } from "./proto/zoo_grpc_pb";
+import { IZooServer, ZooService } from "../proto/zoo_grpc_pb";
 import {
   Bird,
   GetBirdByNameRequest,
@@ -8,7 +8,7 @@ import {
   GetBirdByWingspanResponse,
   GetBirdsRequest,
   GetBirdsResponse,
-} from "./proto/zoo_pb";
+} from "../proto/zoo_pb";
 import data from "./birds.json";
 
 const seed: Bird.AsObject[] = data;
