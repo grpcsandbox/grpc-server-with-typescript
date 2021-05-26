@@ -26,22 +26,22 @@
   },
   "homepage": "https://github.com/grpcsandbox/grpc-server-with-typescript#readme",
   "dependencies": {
-    "grpc": "^1.24.10",
-    "grpc-tools": "^1.11.1",
-    "grpc_tools_node_protoc_ts": "^5.2.2",
-    "nodemon": "^2.0.7",
-    "rimraf": "^3.0.2",
-    "ts-node-dev": "^1.1.6",
-    "typescript": "^4.2.4"
+    "grpc": "1.24.10",
+    "grpc-tools": "1.11.1",
+    "grpc_tools_node_protoc_ts": "5.2.2",
+    "nodemon": "2.0.7",
+    "rimraf": "3.0.2",
+    "ts-node-dev": "1.1.6",
+    "typescript": "4.2.4"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.25.0",
-    "@typescript-eslint/parser": "^4.25.0",
-    "eslint": "^7.27.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "husky": "^6.0.0",
-    "prettier": "^2.3.0"
+    "@typescript-eslint/eslint-plugin": "4.25.0",
+    "@typescript-eslint/parser": "4.25.0",
+    "eslint": "7.27.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "husky": "6.0.0",
+    "prettier": "2.3.0"
   },
   "husky": {
     "hooks": {
