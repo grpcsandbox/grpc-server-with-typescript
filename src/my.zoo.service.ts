@@ -1,5 +1,5 @@
 import grpc, { sendUnaryData, ServerUnaryCall } from "grpc";
-import { IZooServer, ZooService } from "../proto/zoo_grpc_pb";
+import { IZooServer, ZooService } from "../protobuf/zoo_grpc_pb";
 import {
   Bird,
   GetBirdByNameRequest,
@@ -8,7 +8,7 @@ import {
   GetBirdByWingspanResponse,
   GetBirdsRequest,
   GetBirdsResponse,
-} from "../proto/zoo_pb";
+} from "../protobuf/zoo_pb";
 import data from "./birds.json";
 
 const seed: Bird.AsObject[] = data;
@@ -51,7 +51,7 @@ class MyZooService implements IZooServer {
     const request = call.request;
     const size: Wingspan = request.getWingspan();
     const bySize: Bird.AsObject[] = seed.filter((bird) => {
-      switch(size.valueOf()) {
+      switch (size.valueOf()) {
         case Wingspan.S.valueOf():
           return bird.wingspan > 0 && bird.wingspan < 10;
         case Wingspan.M.valueOf():
@@ -94,7 +94,11 @@ class MyZooService implements IZooServer {
   }
 }
 
-const myZooService = new grpc.Server();
-myZooService.addService<IZooServer>(ZooService, new MyZooService());
-myZooService.bind("0.0.0.0:50051", grpc.ServerCredentials.createInsecure());
-myZooService.start();
+function serve() {
+  const myZooService = new grpc.Server();
+  myZooService.addService<IZooServer>(ZooService, new MyZooService());
+  myZooService.bind("0.0.0.0:50051", grpc.ServerCredentials.createInsecure());
+  myZooService.start();
+}
+
+serve();
