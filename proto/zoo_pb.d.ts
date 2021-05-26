@@ -30,8 +30,8 @@ export namespace Bird {
 }
 
 export class GetBirdByNameRequest extends jspb.Message { 
-    getCommonname(): string;
-    setCommonname(value: string): GetBirdByNameRequest;
+    getName(): string;
+    setName(value: string): GetBirdByNameRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetBirdByNameRequest.AsObject;
@@ -45,16 +45,15 @@ export class GetBirdByNameRequest extends jspb.Message {
 
 export namespace GetBirdByNameRequest {
     export type AsObject = {
-        commonname: string,
+        name: string,
     }
 }
 
 export class GetBirdByNameResponse extends jspb.Message { 
-
-    hasBird(): boolean;
-    clearBird(): void;
-    getBird(): Bird | undefined;
-    setBird(value?: Bird): GetBirdByNameResponse;
+    clearBirdsList(): void;
+    getBirdsList(): Array<Bird>;
+    setBirdsList(value: Array<Bird>): GetBirdByNameResponse;
+    addBirds(value?: Bird, index?: number): Bird;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetBirdByNameResponse.AsObject;
@@ -68,13 +67,13 @@ export class GetBirdByNameResponse extends jspb.Message {
 
 export namespace GetBirdByNameResponse {
     export type AsObject = {
-        bird?: Bird.AsObject,
+        birdsList: Array<Bird.AsObject>,
     }
 }
 
 export class GetBirdByWingspanRequest extends jspb.Message { 
-    getWingspan(): number;
-    setWingspan(value: number): GetBirdByWingspanRequest;
+    getWingspan(): Wingspan;
+    setWingspan(value: Wingspan): GetBirdByWingspanRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetBirdByWingspanRequest.AsObject;
@@ -88,16 +87,15 @@ export class GetBirdByWingspanRequest extends jspb.Message {
 
 export namespace GetBirdByWingspanRequest {
     export type AsObject = {
-        wingspan: number,
+        wingspan: Wingspan,
     }
 }
 
 export class GetBirdByWingspanResponse extends jspb.Message { 
-
-    hasBird(): boolean;
-    clearBird(): void;
-    getBird(): Bird | undefined;
-    setBird(value?: Bird): GetBirdByWingspanResponse;
+    clearBirdsList(): void;
+    getBirdsList(): Array<Bird>;
+    setBirdsList(value: Array<Bird>): GetBirdByWingspanResponse;
+    addBirds(value?: Bird, index?: number): Bird;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetBirdByWingspanResponse.AsObject;
@@ -111,7 +109,7 @@ export class GetBirdByWingspanResponse extends jspb.Message {
 
 export namespace GetBirdByWingspanResponse {
     export type AsObject = {
-        bird?: Bird.AsObject,
+        birdsList: Array<Bird.AsObject>,
     }
 }
 
@@ -152,4 +150,11 @@ export namespace GetBirdsResponse {
     export type AsObject = {
         birdsList: Array<Bird.AsObject>,
     }
+}
+
+export enum Wingspan {
+    U = 0,
+    S = 1,
+    M = 2,
+    L = 3,
 }

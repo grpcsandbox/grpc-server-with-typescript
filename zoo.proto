@@ -13,20 +13,27 @@ message Bird {
   int32 wingspan = 2;
 }
 
+enum Wingspan {
+  U = 0;
+  S = 1;
+  M = 2;
+  L = 3;
+}
+
 message GetBirdByNameRequest {
-  string commonName = 1;
+  string name = 1;
 }
 
 message GetBirdByNameResponse {
-  Bird bird = 1;
+  repeated Bird birds = 1;
 }
 
 message GetBirdByWingspanRequest {
-  int32 wingspan = 1;
+  Wingspan wingspan = 1;
 }
 
 message GetBirdByWingspanResponse {
-  Bird bird = 1;
+  repeated Bird birds = 1;
 }
 
 message GetBirdsRequest {}

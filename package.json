@@ -6,7 +6,9 @@
   "scripts": {
     "proto:generate": "npx grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./proto --grpc_out=./proto --ts_out=./proto zoo.proto",
     "proto:clear": "npx rimraf ./proto/*pb*",
-    "start": "ts-node-dev ./my.zoo.service.ts"
+    "start": "ts-node-dev ./my.zoo.service.ts",
+    "lint": "eslint . --ext .ts",
+    "pretty": "npx prettier --no-config './**/*.{ts,js,json}' --write"
   },
   "repository": {
     "type": "git",
@@ -30,5 +32,13 @@
     "rimraf": "^3.0.2",
     "ts-node-dev": "^1.1.6",
     "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.0"
   }
 }
